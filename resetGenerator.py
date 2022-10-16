@@ -153,9 +153,9 @@ class ResetGenerator:
         for item in dataIn['id']:
             id=item    
             print(id)
-            como_json=apiOnline(id)
-            if(id==""):
+            if(id=="" or not id):
                 continue
+            como_json=apiOnline(id)            
             if(como_json['count']!=0):
                 modelo=como_json['history'][0]['produccion']['producto'].upper()
                 telefono=como_json['history'][0]['telefono']
